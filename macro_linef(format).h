@@ -1,5 +1,6 @@
 #ifndef SHOWLINE_HEADER
 #define SHOWLINE_HEADER
+// Just for the UI, not related to any logic.
 
 #include <stdio.h>
 #include <string.h>
@@ -51,6 +52,8 @@ unsigned int __print_indentation(unsigned int i) {
 }
 
 #define ascii_color_code(n) printf("\033[%dm", n)
+#define ascii_color_code2(a, b) printf("\033[%d;%dm", a, b)
+#define ascii_color_code3(a, b, c) printf("\033[%d;%d;%dm", a, b, c)
 
 #define linef putchar(__linef_length ? '\n' : '\0'), __linef_length = __print_indentation(indent) + printf
 #define wlinef putchar(__linef_length ? '\n' : '\0'), __linef_length = __print_indentation(indent) + wprintf
